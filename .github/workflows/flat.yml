@@ -1,0 +1,27 @@
+name: data
+on:
+  schedule:
+    - cron: 0 * * * *
+  workflow_dispatch: {}
+  push:
+    paths:
+      - .github/workflows/flat.yml
+      - ./postprocess.js
+jobs:
+  scheduled:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup deno
+        uses: denoland/setup-deno@main
+        with:
+          deno-version: v1.x
+      - name: Check out repo
+        uses: actions/checkout@v2
+      - name: Fetch data
+        uses: githubocto/flat@v2
+        with:
+          http_url: https://api.enphaseenergy.com/api/v2/systems/${{
+            secrets.ENPHASE_SYSTEM }}/summary?key=${{ secrets.ENPHASE_KEY
+            }}&user_id=${{ secrets.ENPHASE_USER_ID }}
+          downloaded_filename: solar.json
+          postprocess: ./postprocess.js
