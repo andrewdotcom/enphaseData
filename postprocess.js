@@ -11,7 +11,7 @@ delete json.system_id;
 const filteredSolarInfo = json
 
 // Step 3. Write a new JSON file with our filtered data
-const newFilename = `processed-solar.json` // name of a new file to be saved
+const newFilename = `solar_data.json` // name of a new file to be saved
 await writeJSON(newFilename, filteredSolarInfo) // create a new JSON file
 console.log("Wrote a post process file")
 
