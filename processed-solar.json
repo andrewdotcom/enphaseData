@@ -1,1 +1,1 @@
-[32,9280,0,14441,2415913,"2021-05-22","microinverters","normal",1614299896,1621685140,1621684800]
+{"modules":32,"size_w":9280,"current_power":0,"energy_today":14441,"energy_lifetime":2415913,"summary_date":"2021-05-22","source":"microinverters","status":"normal","operational_at":1614299896,"last_report_at":1621686040,"last_interval_end_at":1621685700}
