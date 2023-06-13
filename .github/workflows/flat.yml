@@ -14,11 +14,11 @@ jobs:
       - name: Setup deno
         uses: denoland/setup-deno@main
         with:
-          deno-version: v1.x
+          deno-version: v1.10.x
       - name: Check out repo
-        uses: actions/checkout@v3.4
+        uses: actions/checkout@v2
       - name: Fetch data
-        uses: githubocto/flat@v3.4
+        uses: githubocto/flat@v2
         with:
           http_url: https://api.enphaseenergy.com/api/v2/systems/${{
             secrets.ENPHASE_SYSTEM }}/summary?key=${{ secrets.ENPHASE_KEY
