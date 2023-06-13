@@ -16,9 +16,9 @@ jobs:
         with:
           deno-version: v1.x
       - name: Check out repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3.4
       - name: Fetch data
-        uses: githubocto/flat@v2
+        uses: githubocto/flat@v3.4
         with:
           http_url: https://api.enphaseenergy.com/api/v2/systems/${{
             secrets.ENPHASE_SYSTEM }}/summary?key=${{ secrets.ENPHASE_KEY
